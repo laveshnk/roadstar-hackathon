@@ -1,0 +1,18 @@
+
+> simulation-engine@1.0.0 dev
+> tsx watch src/index.ts
+
+===========================================================
+  Southern Ontario Fleet Telemetry Simulation Engine
+===========================================================
+  HTTP snapshot : http://localhost:4001/api/fleet/snapshot
+  WebSocket     : ws://localhost:4001
+  Time warp     : 1x
+  Tick          : 1000ms | Telemetry: every 2s (moving trucks)
+  Active trucks : 5
+    • TRK-1001 (D. Tremblay) — SMOOTH_401_TRANSIT [DRIVING]
+    • TRK-1002 (S. Patel) — ACTIVE_DETENTION [DOCKED_WAITING]
+    • TRK-1003 (M. Okafor) — HWY_401_SLOWDOWN [DRIVING]
+    • TRK-1004 (J. Nguyen) — DOCK_ARRIVAL_GEOFENCE [DRIVING]
+    • TRK-1005 (R. Kowalski) — OFF_DUTY [OFF_DUTY]
+-----------------------------------------------------------

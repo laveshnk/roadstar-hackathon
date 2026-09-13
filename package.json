@@ -1,26 +1,8 @@
 {
-  "name": "new-hackathon",
-  "version": "0.1.0",
+  "name": "apex-corridor-systems",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "next": "16.3.4",
-    "react": "19.2.8",
-    "react-dom": "19.2.8"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.3.4",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "tts:server": "\"C:\\Users\\Lavesh Nama Kamalesh\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m uvicorn tts-server.main:app --host 127.0.0.1 --port 5050"
   }
 }

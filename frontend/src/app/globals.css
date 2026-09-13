@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f1f5f9;
+  --foreground: #0f172a;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+html, body { height: 100%; }
+
+/* Dark mode CSS variable overrides */
+.dark {
+  --background: #0B0F17;
+  --foreground: #e2e8f0;
+}
+.dark body { background: #0B0F17; color: #e2e8f0; }
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+*::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+.dark *::-webkit-scrollbar-thumb { background: #334155; }
+.dark *::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Leaflet light theme */
+.leaflet-container { background: #e2e8f0; font-family: inherit; z-index: 0; }
+.leaflet-pane, .leaflet-top, .leaflet-bottom { z-index: 1 !important; }
+.leaflet-control-attribution { background: rgba(255,255,255,0.8) !important; color: #64748b !important; font-size: 10px !important; }
+.leaflet-control-attribution a { color: #2563eb !important; }
+.leaflet-bar a { background: #ffffff !important; color: #334155 !important; border-color: #e2e8f0 !important; }
+.leaflet-bar a:hover { background: #f1f5f9 !important; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #ffffff !important; color: #0f172a !important; border: 1px solid #e2e8f0; }
+.leaflet-popup-content { margin: 10px 12px; font-size: 12px; }
+.leaflet-tooltip { background: #ffffff !important; color: #0f172a !important; border: 1px solid #e2e8f0 !important; font-size: 11px; }
+
+/* Truck marker */
+.truck-divicon { background: transparent; border: none; }
+.truck-pin { position: relative; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; }
+.truck-pin__dot { width: 30px; height: 30px; border-radius: 9999px; border: 2px solid rgba(255,255,255,0.9); box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+.truck-pin__pulse { position: absolute; width: 30px; height: 30px; border-radius: 9999px; border: 2px solid; animation: truck-pulse 1.8s ease-out infinite; }
+@keyframes truck-pulse { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(2.6); opacity: 0; } }
+.truck-pin__label { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 10px; font-weight: 700; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.8); pointer-events: none; }
+.truck-pin--selected .truck-pin__dot { width: 34px; height: 34px; box-shadow: 0 0 0 4px rgba(37,99,235,0.3), 0 2px 8px rgba(0,0,0,0.3); }
+
+/* Audio bar animation */
+@keyframes copilot-bar { 0% { transform: scaleY(0.3); } 100% { transform: scaleY(1); } }
+
+/* Robot avatar blink animation */
+@keyframes robot-blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes robot-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+/* Splash screen loading bar */
+@keyframes splash-loading { 0% { width: 0%; } 100% { width: 100%; } }
+
+/* Spotlight mask for tutorial */
+.tour-spotlight {
+  box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.65);
+  border-radius: 0.75rem;
+}
+
